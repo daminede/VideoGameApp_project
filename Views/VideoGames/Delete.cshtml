@@ -1,0 +1,42 @@
+﻿@model VideoGameApp.Models.VideoGame
+
+@{
+    ViewData["Title"] = "Delete Video Game";
+}
+
+<h2 class="text-danger">Delete Video Game</h2>
+
+@if (Model != null)
+{
+    <div class="card border-danger mb-3 shadow">
+        <div class="card-header bg-danger text-white">
+            <h5 class="mb-0">Are you sure you want to delete this game?</h5>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">@Model.Title</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Price:</strong> $@Model.Price</li>
+                <li class="list-group-item"><strong>Description:</strong> @Model.Description</li>
+                <li class="list-group-item"><strong>Developer:</strong> @Model.Developer</li>
+                <li class="list-group-item"><strong>Genre:</strong> @Model.Genre</li>
+                <li class="list-group-item"><strong>Release Date:</strong> @Model.ReleaseDate.ToShortDateString()</li>
+            </ul>
+
+            <div class="mt-4">
+                <form asp-action="DeleteConfirmed" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Delete
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Cancel
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p class="text-warning">⚠️ This video game was not found.</p>
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<VideoGameApp.Models.VideoGame>
+
+<h2 class="mb-4">Welcome to the Video Game App!</h2>
+<p>This is a simple app for displaying and managing video game information.</p>
+
+<a href="@Url.Action("Create", "VideoGames")" class="btn btn-success mb-3">Add New Game</a>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Genre</th>
+                <th>Developer</th>
+                <th>Release Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var game in Model)
+            {
+                <tr>
+                    <td>@game.Title</td>
+                    <td>@game.Price.ToString("C")</td>
+                    <td>@game.Genre</td>
+                    <td>@game.Developer</td>
+                    <td>@game.ReleaseDate.ToShortDateString()</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "VideoGames", new { id = game.Id })" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="@Url.Action("Delete", "VideoGames", new { id = game.Id })" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No video games available. Add one to get started!</p>
+}
