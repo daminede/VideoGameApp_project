@@ -1,0 +1,50 @@
+﻿/* _typography.css */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+body {
+    font-weight: bold;
+    color: #000 !important; /* Darker text for readability */
+}
+
+.welcome-text {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff; /* Blue links for contrast */
+}
+
+.dark-mode .welcome-text {
+    color: white !important;
+}
+
+.dark-mode a {
+    color: #00c6ff !important;
+}
+
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+    color: #ffffff !important;
+}

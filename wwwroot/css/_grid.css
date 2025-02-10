@@ -1,0 +1,17 @@
+﻿/* _grid.css */
+/* Example custom grid system */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    padding: 15px;
+}

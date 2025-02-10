@@ -1,0 +1,129 @@
+﻿/* Main site.css */
+@import '_buttons.css';
+@import '_typography.css';
+@import '_forms.css';
+@import '_grid.css';
+
+/* Global styles can still go here if needed */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* ✅ Global Styles */
+body {
+    background-image: url('../images/day.jpg'); /* Default light mode */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background 0.5s ease-in-out;
+    font-weight: bold;
+    color: #000 !important;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.welcome-text {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff; /* Blue links for contrast */
+}
+
+/* ✅ Footer */
+.footer-bar {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222; /* Dark footer background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ✅ Dark Mode Styles */
+.dark-mode {
+    background-image: url('../images/night.jpg'); /* Dark mode image */
+    color: #ffffff !important;
+}
+
+    .dark-mode .welcome-text {
+        color: white !important;
+    }
+
+    /* ✅ Readable Links & Headings in Dark Mode */
+    .dark-mode a {
+        color: #00c6ff !important;
+    }
+
+    .dark-mode p,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6 {
+        color: #ffffff !important;
+    }
+
+    .dark-mode .footer-bar {
+        background-color: #121212; /* Ensure footer matches dark mode */
+    }
+
+/* ✅ Navbar */
+.navbar {
+    transition: background 0.3s ease-in-out;
+    position: relative; /* Ensure positioning works correctly */
+}
+
+.dark-mode .navbar {
+    background-color: #121212 !important;
+}
+
+
+#darkModeToggle {
+    z-index: 1050;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    padding: 5px;
+}
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+
+.dark-mode #darkModeToggle {
+    content: "☀️";
+}
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
